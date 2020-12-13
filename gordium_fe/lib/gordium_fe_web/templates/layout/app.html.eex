@@ -18,10 +18,15 @@
           <span class="font-bold text-xl my-auto">Gordium</span>
         </div>
         <ul class="flex flex-row my-auto">
-          <li class="pr-5"><a href="https://hexdocs.pm/phoenix/overview.html">About</a></li>
           <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-            <li class="pr-5"><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+            <li class="pr-5">
+              <img class="inline" src="<%= Routes.static_path(@conn, "/images/dash.svg") %>" height="24" width="24">
+              <%= link "Dash", to: Routes.live_dashboard_path(@conn, :home) %>
+            </li>
           <% end %>
+          <li class="pr-5"><a href="#github-url-tbd">
+            <img class="inline" src="<%= Routes.static_path(@conn, "/images/github.svg") %>" height="24" width="24">
+          </a></li>
         </ul>
       </nav>
     </header>

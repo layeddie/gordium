@@ -1,7 +1,8 @@
 <div class="container grid grid-cols-4 mx-auto">
 
   <section class="col-span-3 p-5">
-    <img class="my-auto" src="<%= Routes.static_path(@conn, "/images/placeholder.jpg") %>" height="600">
+    <img class="my-auto" src="<%= Routes.static_path(@conn, "/images/placeholder.jpg") %>"
+     width="1280" height="720">
     <p class="italic">Last update: 2020-10-12 12:00am</p>
   </section>
 
