@@ -20,7 +20,7 @@ if keys == [],
     See your project's config.exs for this error message.
     """)
 
-config :nerves_firmware_ssh,
+config :nerves_ssh,
   authorized_keys: Enum.map(keys, &File.read!/1)
 
 # Configure nerves_init_gadget.
@@ -29,6 +29,22 @@ config :nerves_firmware_ssh,
 # Setting the node_name will enable Erlang Distribution.
 # Only enable this for prod if you understand the risks.
 node_name = if Mix.env() != :prod, do: "gordium_fw"
+
+config :vintage_net,
+  regulatory_domian: "US",
+  config: [
+    {"usb0", %{type: VintageNetDirect}},
+    {"wlan0",
+     %{
+       type: VintageNetWiFi,
+       vintage_net_wifi: %{
+         key_mgmt: :wpa_psk,
+         ssid: System.get_env("NERVES_NETWORK_SSID"),
+         psk: System.get_env("NERVES_NETWORK_PSK")
+       },
+       ipv4: %{method: :dhcp}
+     }}
+  ]
 
 config :nerves_init_gadget,
   ifname: "usb0",
