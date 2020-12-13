@@ -33,7 +33,7 @@ config :nerves_ssh,
 node_name = if Mix.env() != :prod, do: "gordium_fw"
 
 config :vintage_net,
-  regulatory_domian: "US",
+  regulatory_domain: "US",
   config: [
     {"usb0", %{type: VintageNetDirect}},
     {"wlan0",
