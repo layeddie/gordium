@@ -1,6 +1,6 @@
 use Mix.Config
 
-import_config "../../gordium_fe/config/config.exs"
+import_config "../../gordium_ui/config/config.exs"
 
 # Authorize the device to receive firmware using your public key.
 # See https://hexdocs.pm/nerves_firmware_ssh/readme.html for more information
