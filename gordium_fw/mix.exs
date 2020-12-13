@@ -44,10 +44,13 @@ defmodule GordiumFw.MixProject do
       {:ring_logger, "~> 0.6"},
       {:toolshed, "~> 0.2"},
 
+      # Local code
+      {:gordium_fe, path: "../gordium_fe"},
+      {:gordium_hw, path: "../gordium_hw"},
+
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
       {:nerves_pack, "~> 0.4.1", targets: @all_targets},
-      # {:nerves_firmware_ssh, "~> 0.4", targets: @all_targets},
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.8", runtime: false, targets: :rpi},
