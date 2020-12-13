@@ -1,5 +1,20 @@
-<main role="main" class="container">
+<main role="main" class="container mx-auto">
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+  <div class="container grid grid-cols-4 mx-auto">
+    <section class="col-span-3 p-5">
+      <img class="my-auto" src="<%= Routes.static_path(@conn, "/images/placeholder.jpg") %>"
+      width="1280" height="720">
+      <p class="italic">Last update: 2020-10-12 12:00am</p>
+    </section>
+    <section class="col-span-1 p-5">
+      <div class="flex flex-col">
+        <button type="button" class="bg-red-500 text-gray-200 rounded hover:bg-red-400 px-4 py-2 focus:outline-none">Toggle power</button>
+      </div>
+    </section>
+  </div>
+
   <%= @inner_content %>
+
 </main>

@@ -45,7 +45,7 @@ defmodule GordiumFw.MixProject do
       {:toolshed, "~> 0.2"},
 
       # Local code
-      {:gordium_fe, path: "../gordium_fe"},
+      {:gordium_ui, path: "../gordium_ui"},
       {:gordium_hw, path: "../gordium_hw"},
 
       # Dependencies for all targets except :host
