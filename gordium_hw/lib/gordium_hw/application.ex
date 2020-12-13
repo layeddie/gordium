@@ -9,6 +9,8 @@ defmodule GordiumHw.Application do
     children = [
       # Starts a worker by calling: GordiumHw.Worker.start_link(arg)
       # {GordiumHw.Worker, arg}
+      PiCam.Camera,
+      GordiumHw.Camera
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
