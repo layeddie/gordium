@@ -1,7 +1,5 @@
 use Mix.Config
 
-import_config "../../gordium_ui/config/config.exs"
-
 # Authorize the device to receive firmware using your public key.
 # See https://hexdocs.pm/nerves_firmware_ssh/readme.html for more information
 # on configuring nerves_firmware_ssh.
@@ -35,7 +33,7 @@ node_name = if Mix.env() != :prod, do: "gordium_fw"
 config :vintage_net,
   regulatory_domain: "US",
   config: [
-    {"usb0", %{type: VintageNetDirect}},
+    # {"usb0", %{type: VintageNetDirect}},
     {"wlan0",
      %{
        type: VintageNetWiFi,
