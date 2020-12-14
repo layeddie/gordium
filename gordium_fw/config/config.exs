@@ -24,7 +24,9 @@ config :gordium_fw, target: Mix.target()
 # Customize non-Elixir parts of the firmware. See
 # https://hexdocs.pm/nerves/advanced-configuration.html for details.
 
-config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
+config :nerves, :firmware,
+  rootfs_overlay: "rootfs_overlay",
+  fwup_conf: "config/fwup.conf"
 
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
