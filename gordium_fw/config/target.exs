@@ -20,6 +20,12 @@ if keys == [],
     See your project's config.exs for this error message.
     """)
 
+config :gordium_ui, GordiumUI.Endpoint,
+  code_reloader: false,
+  http: [port: 80, protocol_options: [idle_timeout: :infinity]],
+  load_from_system_env: false,
+  server: true
+
 config :nerves_ssh,
   authorized_keys: Enum.map(keys, &File.read!/1)
 

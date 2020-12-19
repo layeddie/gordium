@@ -33,6 +33,8 @@ defmodule GordiumUi.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:gordium_hw, path: "../gordium_hw"},
+
       {:phoenix, "~> 1.5.7"},
       {:phoenix_live_view, "~> 0.15.0"},
       {:floki, ">= 0.27.0", only: :test},

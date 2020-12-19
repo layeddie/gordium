@@ -18,6 +18,11 @@ defmodule GordiumUiWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+
+    forward "/video.mjpg", Streamer
+
+    get "/snap/:key", SnapController, :snap
+    get "/snap.jpg", SnapController, :current_snap
   end
 
   # Other scopes may use custom stacks.
